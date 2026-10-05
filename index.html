@@ -267,21 +267,42 @@ section.content {
 }
 
 .card {
-    background: white;
-    padding: 25px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    background: #ffffff;
+    padding: 28px 22px;
+    border-radius: 14px;
+    border: 1px solid #e8eef5;
+    box-shadow: 0 5px 20px rgba(18, 53, 91, .05);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(18, 53, 91, .10);
+    border-color: #cbdcf5;
 }
 
 .card h3 {
     color: #12355b;
-    margin-bottom: 7px;
+    margin-bottom: 9px;
     font-size: 17px;
 }
 
 .card p {
     color: #6b7280;
     font-size: 14px;
+    line-height: 1.6;
+}
+
+.card-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef5ff;
+    border-radius: 10px;
+    font-size: 21px;
+    margin-bottom: 16px;
 }
 
 /* TOOLS */
@@ -290,18 +311,27 @@ section.content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
     max-width: 900px;
     margin: auto;
 }
 
 .tool {
-    padding: 11px 19px;
-    background: #eef5ff;
+    padding: 12px 20px;
+    background: #ffffff;
     color: #12355b;
+    border: 1px solid #dbe6f3;
     border-radius: 30px;
     font-weight: 600;
     font-size: 14px;
+    box-shadow: 0 3px 10px rgba(18, 53, 91, .04);
+    transition: all .2s ease;
+}
+
+.tool:hover {
+    background: #eef5ff;
+    border-color: #b8cdea;
+    transform: translateY(-2px);
 }
 
 /* EXPERIENCE */
@@ -696,48 +726,55 @@ footer {
 
     <div class="grid">
 
-        <div class="card">
-            <h3>Customer Support</h3>
-            <p>Professional support through phone, email, and chat.</p>
-        </div>
-
-        <div class="card">
-            <h3>CRM Management</h3>
-            <p>Organizing customer records, interactions, and follow-ups.</p>
-        </div>
-
-        <div class="card">
-            <h3>Administrative Support</h3>
-            <p>Data entry, organization, tracking, and daily operational support.</p>
-        </div>
-
-        <div class="card">
-            <h3>Customer Retention</h3>
-            <p>Understanding concerns and working toward effective resolutions.</p>
-        </div>
-
-        <div class="card">
-            <h3>Order Management</h3>
-            <p>Order entry, availability verification, shipping, and follow-ups.</p>
-        </div>
-
-        <div class="card">
-            <h3>Problem Solving</h3>
-            <p>Handling customer concerns calmly and finding practical solutions.</p>
-        </div>
-
-        <div class="card">
-            <h3>Multichannel Support</h3>
-            <p>Managing customer conversations across different communication channels.</p>
-        </div>
-
-        <div class="card">
-            <h3>Data Management</h3>
-            <p>Maintaining organized and accurate customer and operational information.</p>
-        </div>
-
+    <div class="card">
+        <div class="card-icon">💬</div>
+        <h3>Customer Support</h3>
+        <p>Professional support through phone, email, and chat.</p>
     </div>
 
+    <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>CRM Management</h3>
+        <p>Organizing customer records, interactions, and follow-ups.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🗂️</div>
+        <h3>Administrative Support</h3>
+        <p>Data entry, organization, tracking, and daily operational support.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Customer Retention</h3>
+        <p>Understanding concerns and working toward effective resolutions.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>Order Management</h3>
+        <p>Order entry, availability verification, shipping, and follow-ups.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">💡</div>
+        <h3>Problem Solving</h3>
+        <p>Handling customer concerns calmly and finding practical solutions.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🎧</div>
+        <h3>Multichannel Support</h3>
+        <p>Managing customer conversations across different communication channels.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Data Management</h3>
+        <p>Maintaining organized and accurate customer and operational information.</p>
+    </div>
+
+</div>
 </section>
 
 
@@ -1256,7 +1293,6 @@ footer {
 
 </section>
 
-<!-- ADMINISTRATIVE SUPPORT SAMPLE -->
 
 <!-- ADMINISTRATIVE SUPPORT SAMPLE -->
 
