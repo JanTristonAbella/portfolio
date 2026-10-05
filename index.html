@@ -1,446 +1,664 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jan Triston Abella | Virtual Assistant</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Jan Triston Abella | Customer Service & Virtual Assistant</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #1f2937;
-            background: #f8fafc;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.96);
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-            z-index: 1000;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        nav .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #12355b;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #243247;
+    background: #ffffff;
+    line-height: 1.6;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #374151;
-            margin-left: 25px;
-            font-size: 14px;
-        }
+/* NAVIGATION */
 
-        nav a:hover {
-            color: #2563eb;
-        }
+nav {
+    height: 80px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,.96);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0,0,0,.05);
+}
 
-        section {
-            padding: 90px 8%;
-        }
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #12355b;
+}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #eef6ff, #ffffff);
-            padding-top: 120px;
-        }
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
 
-        .hero-content {
-            max-width: 850px;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 14px;
+}
 
-        .hero h1 {
-            font-size: 58px;
-            color: #12355b;
-            margin-bottom: 10px;
-        }
+.nav-links a:hover {
+    color: #2563eb;
+}
 
-        .hero h2 {
-            font-size: 28px;
-            font-weight: normal;
-            color: #2563eb;
-            margin-bottom: 20px;
-        }
+/* HERO */
 
-        .hero p {
-            font-size: 18px;
-            color: #4b5563;
-            max-width: 700px;
-            margin-bottom: 30px;
-        }
+.hero {
+    min-height: calc(100vh - 80px);
+    padding: 70px 8%;
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    align-items: center;
+    gap: 70px;
+    background:
+        radial-gradient(circle at 80% 30%, #e6f0ff 0, transparent 32%),
+        linear-gradient(135deg, #f4f8ff, #ffffff);
+}
 
-        .button {
-            display: inline-block;
-            padding: 13px 24px;
-            background: #12355b;
-            color: white;
-            text-decoration: none;
-            border-radius: 7px;
-            margin-right: 10px;
-        }
+.eyebrow {
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
 
-        .button.secondary {
-            background: white;
-            color: #12355b;
-            border: 1px solid #12355b;
-        }
+.hero h1 {
+    color: #12355b;
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
 
-        .section-title {
-            text-align: center;
-            color: #12355b;
-            font-size: 34px;
-            margin-bottom: 40px;
-        }
+.hero h2 {
+    font-size: clamp(21px, 2.4vw, 30px);
+    font-weight: 500;
+    color: #2563eb;
+    margin-bottom: 25px;
+}
 
-        .about {
-            background: white;
-        }
+.hero-description {
+    max-width: 680px;
+    color: #566273;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
 
-        .about-text {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            font-size: 17px;
-            color: #4b5563;
-        }
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
 
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
+.btn {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .2s;
+}
 
-        .stat {
-            background: #f8fafc;
-            padding: 25px;
-            width: 210px;
-            text-align: center;
-            border-radius: 10px;
-        }
+.btn-primary {
+    background: #12355b;
+    color: white;
+}
 
-        .stat strong {
-            display: block;
-            font-size: 27px;
-            color: #2563eb;
-        }
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
 
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 18px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.btn-secondary {
+    color: #12355b;
+    border: 1px solid #12355b;
+    background: white;
+}
 
-        .skill {
-            background: white;
-            padding: 22px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-            font-weight: bold;
-        }
+/* PHOTO */
 
-        .tools {
-            background: white;
-        }
+.photo-area {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
 
-        .tool-list {
-            max-width: 900px;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+.photo-card {
+    position: relative;
+    width: min(390px, 100%);
+}
 
-        .tool {
-            background: #eef6ff;
-            color: #12355b;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-        }
+.photo-card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #2563eb;
+    border-radius: 28px;
+    transform: rotate(5deg);
+    top: 12px;
+    left: 12px;
+    opacity: .12;
+}
 
-        .experience-card {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-        }
+.profile-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    position: relative;
+    display: block;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(18,53,91,.18);
+}
 
-        .experience-card h3 {
-            color: #12355b;
-            margin-bottom: 5px;
-        }
+/* QUICK STATS */
 
-        .experience-card .date {
-            color: #2563eb;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
+.stats {
+    padding: 28px 8%;
+    background: #12355b;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+}
 
-        .experience-card ul {
-            padding-left: 20px;
-            color: #4b5563;
-        }
+.stat {
+    padding: 10px;
+    border-right: 1px solid rgba(255,255,255,.2);
+}
 
-        .samples {
-            background: #f8fafc;
-        }
+.stat:last-child {
+    border-right: none;
+}
 
-        .sample-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.stat strong {
+    display: block;
+    font-size: 25px;
+}
 
-        .sample {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            border-top: 4px solid #2563eb;
-        }
+.stat span {
+    font-size: 13px;
+    opacity: .8;
+}
 
-        .sample h3 {
-            color: #12355b;
-            margin-bottom: 10px;
-        }
+/* GENERAL */
 
-        .sample p {
-            color: #4b5563;
-        }
+section.content {
+    padding: 90px 8%;
+}
 
-        .contact {
-            background: #12355b;
-            color: white;
-            text-align: center;
-        }
+.section-title {
+    text-align: center;
+    color: #12355b;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
 
-        .contact h2 {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
+.section-subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+    color: #6b7280;
+}
 
-        .contact p {
-            margin-bottom: 25px;
-        }
+/* ABOUT */
 
-        .contact .button {
-            background: white;
-            color: #12355b;
-        }
+.about {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+    color: #566273;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0d2945;
-            color: white;
-            font-size: 14px;
-        }
+/* SKILLS */
 
-        @media (max-width: 700px) {
-            nav {
-                padding: 15px 5%;
-            }
+.skills-section {
+    background: #f7faff;
+}
 
-            nav .logo {
-                font-size: 16px;
-            }
+.grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
 
-            nav a {
-                display: none;
-            }
+.card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.05);
+}
 
-            .hero h1 {
-                font-size: 40px;
-            }
+.card h3 {
+    color: #12355b;
+    margin-bottom: 7px;
+    font-size: 17px;
+}
 
-            .hero h2 {
-                font-size: 22px;
-            }
+.card p {
+    color: #6b7280;
+    font-size: 14px;
+}
 
-            .hero p {
-                font-size: 16px;
-            }
+/* TOOLS */
 
-            section {
-                padding: 75px 6%;
-            }
-        }
-    </style>
+.tools {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.tool {
+    padding: 11px 19px;
+    background: #eef5ff;
+    color: #12355b;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* EXPERIENCE */
+
+.experience-section {
+    background: #f7faff;
+}
+
+.experience {
+    max-width: 900px;
+    margin: auto;
+}
+
+.job {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    border-left: 4px solid #2563eb;
+    box-shadow: 0 4px 18px rgba(0,0,0,.04);
+}
+
+.job h3 {
+    color: #12355b;
+}
+
+.job .date {
+    color: #2563eb;
+    font-size: 14px;
+    margin: 5px 0 12px;
+}
+
+.job p {
+    color: #606b79;
+}
+
+/* SAMPLES */
+
+.samples {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.sample {
+    padding: 28px;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
+}
+
+.sample h3 {
+    color: #12355b;
+    margin-bottom: 8px;
+}
+
+.sample p {
+    color: #6b7280;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background: #12355b;
+    color: white;
+    padding: 85px 8%;
+}
+
+.contact h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.contact p {
+    opacity: .85;
+    margin-bottom: 25px;
+}
+
+.contact .btn {
+    background: white;
+    color: #12355b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0b2948;
+    color: rgba(255,255,255,.7);
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .photo-area {
+        order: -1;
+    }
+
+    .photo-card {
+        width: 270px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .stat {
+        border: none;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media(max-width:550px) {
+
+    .grid,
+    .samples {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">Jan Triston Abella</div>
+<nav>
 
-        <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#samples">Samples</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+    <div class="logo">Jan Triston Abella</div>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#samples">Work Samples</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
 
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
+<!-- HERO -->
 
-            <h1>Jan Triston Abella</h1>
+<header class="hero">
 
-            <h2>Virtual Assistant | Customer Service Specialist</h2>
+    <div>
 
-            <p>
-                Providing reliable customer support, administrative assistance,
-                and organized solutions through clear communication and
-                professional service.
-            </p>
+        <div class="eyebrow">CUSTOMER SERVICE • VIRTUAL ASSISTANCE</div>
 
-            <a href="#experience" class="button">
-                View My Experience
+        <h1>
+            Jan Triston<br>
+            Abella
+        </h1>
+
+        <h2>Customer Service Specialist & Virtual Assistant</h2>
+
+        <p class="hero-description">
+            Customer service professional with 9+ years of experience
+            supporting customers through phone, email, and chat.
+            Experienced in CRM management, customer retention,
+            order processing, problem-solving, and administrative support.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#samples" class="btn btn-primary">
+                View My Work
             </a>
 
-            <a href="#contact" class="button secondary">
+            <a href="#contact" class="btn btn-secondary">
                 Contact Me
             </a>
 
         </div>
-    </section>
+
+    </div>
 
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+    <div class="photo-area">
 
-        <h2 class="section-title">About Me</h2>
+        <div class="photo-card">
 
-        <div class="about-text">
-
-            <p>
-                I'm a Customer Service and Virtual Assistant professional
-                with 9+ years of experience supporting customers through
-                phone, email, and chat. I have experience in CRM management,
-                order processing, administrative support, and problem-solving.
-            </p>
-
-            <br>
-
-            <p>
-                I'm organized, adaptable, and committed to providing reliable
-                support and positive customer experiences. I'm also comfortable
-                learning new tools and systems to meet the needs of clients
-                and teams.
-            </p>
+            <img
+                src="dp.jpg"
+                alt="Jan Triston Abella"
+                class="profile-photo"
+            >
 
         </div>
 
-        <div class="stats">
+    </div>
 
-            <div class="stat">
-                <strong>9+</strong>
-                Years Experience
-            </div>
+</header>
 
-            <div class="stat">
-                <strong>3</strong>
-                Support Channels
-            </div>
 
-            <div class="stat">
-                <strong>CRM</strong>
-                Experience
-            </div>
+<!-- STATS -->
 
-            <div class="stat">
-                <strong>Remote</strong>
-                Work Ready
-            </div>
+<div class="stats">
 
+    <div class="stat">
+        <strong>9+</strong>
+        <span>Years of Experience</span>
+    </div>
+
+    <div class="stat">
+        <strong>3</strong>
+        <span>Support Channels</span>
+    </div>
+
+    <div class="stat">
+        <strong>CRM</strong>
+        <span>Customer Management</span>
+    </div>
+
+    <div class="stat">
+        <strong>Remote</strong>
+        <span>Work Ready</span>
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section class="content" id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <p class="section-subtitle">
+        Customer-focused support backed by years of real-world experience.
+    </p>
+
+    <div class="about">
+
+        <p>
+            I'm a Customer Service and Virtual Assistant professional
+            with 9+ years of experience supporting customers through
+            phone, email, and chat. I have experience in CRM management,
+            order processing, administrative support, and problem-solving.
+        </p>
+
+        <br>
+
+        <p>
+            I'm organized, adaptable, and committed to providing reliable
+            support and positive customer experiences. I'm also comfortable
+            learning new tools and systems to meet the needs of clients
+            and teams.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERTISE -->
+
+<section class="content skills-section" id="skills">
+
+    <h2 class="section-title">My Expertise</h2>
+
+    <p class="section-subtitle">
+        Areas where I can provide reliable day-to-day support.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Customer Support</h3>
+            <p>Professional support through phone, email, and chat.</p>
         </div>
 
-    </section>
-
-
-    <!-- SKILLS -->
-    <section id="skills">
-
-        <h2 class="section-title">Core Skills</h2>
-
-        <div class="skills">
-
-            <div class="skill">Customer Service</div>
-            <div class="skill">Phone Support</div>
-            <div class="skill">Email Support</div>
-            <div class="skill">Chat Support</div>
-            <div class="skill">CRM Management</div>
-            <div class="skill">Order Processing</div>
-            <div class="skill">Administrative Support</div>
-            <div class="skill">Customer Retention</div>
-            <div class="skill">Data Entry</div>
-            <div class="skill">Problem Solving</div>
-
+        <div class="card">
+            <h3>CRM Management</h3>
+            <p>Organizing customer records, interactions, and follow-ups.</p>
         </div>
 
-    </section>
-
-
-    <!-- TOOLS -->
-    <section class="tools">
-
-        <h2 class="section-title">Tools & Platforms</h2>
-
-        <div class="tool-list">
-
-            <div class="tool">Salesforce</div>
-            <div class="tool">Zendesk</div>
-            <div class="tool">Intercom</div>
-            <div class="tool">Google Workspace</div>
-            <div class="tool">Google Sheets</div>
-            <div class="tool">Microsoft Excel</div>
-            <div class="tool">Canva</div>
-
+        <div class="card">
+            <h3>Administrative Support</h3>
+            <p>Data entry, organization, tracking, and daily operational support.</p>
         </div>
 
-    </section>
+        <div class="card">
+            <h3>Customer Retention</h3>
+            <p>Understanding concerns and working toward effective resolutions.</p>
+        </div>
+
+        <div class="card">
+            <h3>Order Management</h3>
+            <p>Order entry, availability verification, shipping, and follow-ups.</p>
+        </div>
+
+        <div class="card">
+            <h3>Problem Solving</h3>
+            <p>Handling customer concerns calmly and finding practical solutions.</p>
+        </div>
+
+        <div class="card">
+            <h3>Multichannel Support</h3>
+            <p>Managing customer conversations across different communication channels.</p>
+        </div>
+
+        <div class="card">
+            <h3>Data Management</h3>
+            <p>Maintaining organized and accurate customer and operational information.</p>
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
+<!-- TOOLS -->
 
-        <h2 class="section-title">Experience Highlights</h2>
+<section class="content">
 
-        <div class="experience-card">
+    <h2 class="section-title">Tools & Platforms</h2>
+
+    <p class="section-subtitle">
+        Platforms I have experience using or working with.
+    </p>
+
+    <div class="tools">
+
+        <span class="tool">Salesforce</span>
+        <span class="tool">Zendesk</span>
+        <span class="tool">Intercom</span>
+        <span class="tool">Google Workspace</span>
+        <span class="tool">Google Sheets</span>
+        <span class="tool">Microsoft Excel</span>
+        <span class="tool">Canva</span>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="content experience-section" id="experience">
+
+    <h2 class="section-title">Experience Highlights</h2>
+
+    <p class="section-subtitle">
+        A snapshot of my professional customer service experience.
+    </p>
+
+    <div class="experience">
+
+        <div class="job">
 
             <h3>Customer Concierge Services</h3>
 
@@ -448,111 +666,124 @@
                 March 2025 – Present
             </div>
 
-            <ul>
-                <li>Handle customer inquiries and provide professional support.</li>
-                <li>Communicate with customers through multiple channels.</li>
-                <li>Resolve customer concerns while maintaining service quality.</li>
-                <li>Maintain accurate customer information and records.</li>
-            </ul>
+            <p>
+                Supporting customers in a service-focused environment,
+                coordinating solutions, handling customer concerns,
+                and maintaining clear communication between customers
+                and operational teams.
+            </p>
 
         </div>
 
 
-        <div class="experience-card">
+        <div class="job">
 
-            <h3>Customer Service & Support Experience</h3>
+            <h3>Customer Service & Retention</h3>
 
             <div class="date">
                 Previous Experience
             </div>
 
-            <ul>
-                <li>Handled high-volume customer inquiries through phone, email, and chat.</li>
-                <li>Assisted customers with product inquiries and basic troubleshooting.</li>
-                <li>Processed orders and verified product availability.</li>
-                <li>Handled customer follow-ups and issue resolution.</li>
-                <li>Used CRM and helpdesk platforms to manage customer information and tickets.</li>
-            </ul>
+            <p>
+                Managed customer inquiries, account concerns, retention
+                conversations, follow-ups, and issue resolution through
+                multiple communication channels.
+            </p>
 
         </div>
 
-    </section>
 
+        <div class="job">
 
-    <!-- WORK SAMPLES -->
-    <section class="samples" id="samples">
+            <h3>E-commerce & Order Support</h3>
 
-        <h2 class="section-title">Work Samples</h2>
-
-        <div class="sample-grid">
-
-            <div class="sample">
-                <h3>Customer Support</h3>
-
-                <p>
-                    Sample customer inquiry responses demonstrating
-                    professional communication, empathy, and problem-solving.
-                </p>
+            <div class="date">
+                Previous Experience
             </div>
 
-
-            <div class="sample">
-                <h3>CRM Management</h3>
-
-                <p>
-                    Sample customer records, follow-ups, and ticket
-                    management demonstrating CRM organization.
-                </p>
-            </div>
-
-
-            <div class="sample">
-                <h3>Order Management</h3>
-
-                <p>
-                    Sample order tracking and inventory management
-                    demonstrating accuracy and attention to detail.
-                </p>
-            </div>
-
-
-            <div class="sample">
-                <h3>Administrative Support</h3>
-
-                <p>
-                    Sample task tracking, scheduling, data entry,
-                    and follow-up organization.
-                </p>
-            </div>
+            <p>
+                Assisted with pre-sales and after-sales support, order entry,
+                product availability, shipping inquiries, and customer
+                follow-ups in an e-commerce environment.
+            </p>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
+<!-- WORK SAMPLES -->
 
-        <h2>Let's Work Together</h2>
+<section class="content" id="samples">
 
-        <p>
-            I'm open to opportunities in Virtual Assistance,
-            Customer Service, and Administrative Support.
-        </p>
+    <h2 class="section-title">Work Samples</h2>
 
-        <a href="mailto:YOUR-EMAIL@example.com" class="button">
-            Contact Me
-        </a>
+    <p class="section-subtitle">
+        Examples demonstrating how I approach customer service and administrative work.
+    </p>
 
-    </section>
+    <div class="samples">
+
+        <div class="sample">
+            <h3>Customer Email Support</h3>
+            <p>
+                Professional customer responses focused on clear communication,
+                empathy, accurate information, and resolution.
+            </p>
+        </div>
+
+        <div class="sample">
+            <h3>CRM Management</h3>
+            <p>
+                Organized customer records, interaction notes, ticket updates,
+                and follow-up documentation.
+            </p>
+        </div>
+
+        <div class="sample">
+            <h3>Order Tracking</h3>
+            <p>
+                Structured tracking of orders, fulfillment status,
+                shipping updates, and customer follow-ups.
+            </p>
+        </div>
+
+        <div class="sample">
+            <h3>Administrative Support</h3>
+            <p>
+                Task tracking, scheduling, data entry, documentation,
+                and daily operational organization.
+            </p>
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- FOOTER -->
-    <footer>
+<!-- CONTACT -->
 
-        © 2026 Jan Triston Abella. All Rights Reserved.
+<section class="contact" id="contact">
 
-    </footer>
+    <h2>Let's Work Together</h2>
+
+    <p>
+        Open to Virtual Assistant, Customer Service,
+        and Administrative Support opportunities.
+    </p>
+
+    <a href="mailto:YOUR-EMAIL-HERE" class="btn">
+        Contact Me
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 Jan Triston Abella • Professional Portfolio
+</footer>
 
 </body>
 </html>
