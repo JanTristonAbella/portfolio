@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07172d">
+    <link rel="icon" type="image/jpeg" href="logo.jfif">
+    <title>Contact Jan Triston Abella</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            min-width: 320px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #f3f8ff;
+            background:
+                radial-gradient(ellipse at 10% 10%, rgba(25, 112, 205, .25), transparent 32rem),
+                radial-gradient(ellipse at 90% 75%, rgba(49, 137, 231, .14), transparent 34rem),
+                linear-gradient(145deg, #07172d, #0a2342 52%, #07172d);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        nav {
+            min-height: 76px;
+            padding: 12px max(6%, calc((100% - 1180px) / 2));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            border-bottom: 1px solid rgba(207, 229, 255, .12);
+            background: rgba(5, 19, 38, .82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #f3f8ff;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo img {
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(219, 237, 255, .24);
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: clamp(14px, 2.2vw, 30px);
+        }
+
+        .nav-links a {
+            color: #c0d0e3;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover,
+        .nav-links a[aria-current="page"] {
+            color: #8bc4ff;
+        }
+
+        main {
+            width: min(100% - 40px, 720px);
+            margin: auto;
+            padding: 72px 0;
+        }
+
+        .contact-card {
+            padding: clamp(26px, 6vw, 52px);
+            border: 1px solid rgba(210, 231, 255, .18);
+            border-radius: 24px;
+            background: rgba(255, 255, 255, .075);
+            box-shadow: 0 20px 60px rgba(0, 10, 28, .3);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .eyebrow {
+            margin-bottom: 12px;
+            color: #8bc4ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin-bottom: 12px;
+            color: #fff;
+            font-size: clamp(36px, 7vw, 54px);
+            letter-spacing: -1.8px;
+            line-height: 1.1;
+        }
+
+        .intro {
+            margin-bottom: 30px;
+            color: #c0cee0;
+        }
+
+        form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .field {
+            display: grid;
+            gap: 7px;
+        }
+
+        label {
+            color: #f3f8ff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid rgba(210, 231, 255, .2);
+            border-radius: 10px;
+            outline: none;
+            background: rgba(3, 14, 29, .42);
+            color: #fff;
+            font: inherit;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #91a8c2;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #8bc4ff;
+            box-shadow: 0 0 0 3px rgba(139, 196, 255, .16);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .honey {
+            position: absolute;
+            left: -5000px;
+        }
+
+        button {
+            justify-self: start;
+            padding: 13px 24px;
+            border: 0;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #368ff0, #1766c3);
+            box-shadow: 0 8px 22px rgba(20, 105, 203, .3);
+            color: #fff;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 700;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(20, 105, 203, .42);
+        }
+
+        .fallback {
+            margin-top: 22px;
+            color: #b4c6dc;
+            font-size: 14px;
+        }
+
+        .fallback a {
+            color: #a8d1ff;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 24px;
+            color: #d5e8ff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 18px;
+            border-top: 1px solid rgba(210, 231, 255, .1);
+            background: rgba(3, 10, 21, .75);
+            color: #91a8c2;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #8bc4ff;
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+                padding: 12px 6%;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                gap: 20px;
+                overflow-x: auto;
+                padding-bottom: 3px;
+                scrollbar-width: none;
+            }
+
+            .nav-links::-webkit-scrollbar {
+                display: none;
+            }
+
+            .nav-links a {
+                flex: 0 0 auto;
+                font-size: 13px;
+            }
+
+            main {
+                width: min(100% - 28px, 720px);
+                padding: 38px 0;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav aria-label="Main navigation">
+        <a class="logo" href="index.html" aria-label="Jan Triston Abella home">
+            Jan Triston Abella
+            <img src="logo.jfif" alt="">
+        </a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#skills">Expertise</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#samples">Work Samples</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="contact-card">
+            <p class="eyebrow">Get in touch</p>
+            <h1>Let's work together.</h1>
+            <p class="intro">
+                Have an opportunity or a question? Send me a message and I'll get back to you.
+            </p>
+
+            <form action="https://formsubmit.co/jantriston@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Portfolio contact form message">
+                <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <div class="field">
+                    <label for="name">Your name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me a little about what you have in mind..." required></textarea>
+                </div>
+
+                <button type="submit">Send message</button>
+            </form>
+
+            <p class="fallback">
+                Prefer email? <a href="mailto:jantriston@gmail.com">jantriston@gmail.com</a>
+            </p>
+            <a class="back-link" href="index.html">← Back to portfolio</a>
+        </div>
+    </main>
+
+    <footer>© 2026 Jan Triston Abella • Professional Portfolio</footer>
+</body>
+</html>
